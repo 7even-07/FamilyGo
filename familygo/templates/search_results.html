@@ -1,0 +1,26 @@
+{%include 'navbar.html'%}
+{%load static%}
+
+<!-- <h2>Search Results</h2>
+
+  {% if query %}
+    <p>Search results for '{{ query }}':</p>
+  {% endif %}
+
+  {% if results %}
+    <ul>
+      {% for result in results %}
+        <li>{{ result.p_name }} - {{ result.description }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No results found.</p>
+  {% endif %} -->
+
+
+
+
+  <form class="d-flex" role="search" method="GET" action="srch">
+    <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </form>

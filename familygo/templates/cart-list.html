@@ -1,0 +1,553 @@
+{% include "navbar.html" %}
+{% load static %}
+
+<style>
+    button {
+        border: 0;
+        background-color: white;
+        font-size: 1.3rem !important;
+        line-height: 1.2 !important;
+        padding: 0 0.5rem !important;
+        border-radius: 5rem !important;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    }
+</style>
+<h1>CART LIST</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th class="text-center">ID</th>
+        <th>PRODUCT NAME</th>
+        <th>PRICE</th>
+        <th>Quantity</th>
+        <th>USERNAME</th>
+        <th class="text-center">SUB-TOTAL</th>
+        <!-- <th class="text-center">Buy</th> -->
+    </tr>
+
+    <!-- Inside your table loop -->
+    {% for i in clist %}
+    <tr style="vertical-align: middle;">
+        <td class="text-center">{{ i.id }}</td>
+        {% if i.shirt %}
+            <td>{{ i.shirt.p_name }}</td>
+            <td>{{ i.shirt.price }}</td>
+        {% elif i.kudta %}
+            <td>{{ i.kudta.k_name }}</td>
+            <td>{{ i.kudta.price }}</td>
+        {% elif i.oversize %}
+            <td>{{ i.oversize.p_name }}</td>
+            <td>{{ i.oversize.price }}</td>
+           
+        {% elif i.sweatb %}
+            <td>{{ i.sweatb.p_name }}</td>
+            <td>{{ i.sweatb.price }}</td>
+           
+        {% elif i.hoodiesb %}
+            <td>{{ i.hoodiesb.p_name }}</td>
+            <td>{{ i.hoodiesb.price }}</td>
+            
+        {% elif i.shervani %}
+            <td>{{ i.shervani.p_name }}</td>
+            <td>{{ i.shervani.price }}</td>
+           
+        {% elif i.jacket %}
+            <td>{{ i.jacket.p_name }}</td>
+            <td>{{ i.jacket.price }}</td>
+           
+        {% elif i.jeans %}
+            <td>{{ i.jeans.p_name }}</td>
+            <td>{{ i.jeans.price }}</td>
+           
+        {% elif i.shortsb %}
+            <td>{{ i.shortsb.p_name }}</td>
+            <td>{{ i.shortsb.price }}</td>
+            
+        {% elif i.cargo %}
+            <td>{{ i.cargo.p_name }}</td>
+            <td>{{ i.cargo.price }}</td>
+            
+        {% elif i.chinosb %}
+            <td>{{ i.chinosb.p_name }}</td>
+            <td>{{ i.chinosb.price }}</td>
+           
+        {% elif i.joggerb %}
+            <td>{{ i.joggerb.p_name }}</td>
+            <td>{{ i.joggerb.price }}</td>
+           
+        {% elif i.cordouary %}
+            <td>{{ i.cordouary.p_name }}</td>
+            <td>{{ i.cordouary.price }}</td>
+            
+        {% elif i.sweatp %}
+            <td>{{ i.sweatp.p_name }}</td>
+            <td>{{ i.sweatp.price }}</td>
+            
+        {% elif i.tshirt %}
+            <td>{{ i.tshirt.p_name }}</td>
+            <td>{{ i.tshirt.price }}</td>
+           
+        {% elif i.hoodiesg %}
+            <td>{{ i.hoodiesg.p_name }}</td>
+            <td>{{ i.hoodiesg.price }}</td>
+            
+        {% elif i.tank %}
+            <td>{{ i.tank.p_name }}</td>
+            <td>{{ i.tank.price }}</td>
+            
+        {% elif i.peplum %}
+            <td>{{ i.peplum.p_name }}</td>
+            <td>{{ i.peplum.price }}</td>
+            
+        {% elif i.crop %}
+            <td>{{ i.crop.p_name }}</td>
+            <td>{{ i.crop.price }}</td>
+            
+        {% elif i.cardigan %}
+            <td>{{ i.cardigan.p_name }}</td>
+            <td>{{ i.cardigan.price }}</td>
+            
+        {% elif i.tube %}
+            <td>{{ i.tube.p_name }}</td>
+            <td>{{ i.tube.price }}</td>
+            
+        {% elif i.jeansg %}
+            <td>{{ i.jeansg.p_name }}</td>
+            <td>{{ i.jeansg.price }}</td>
+            
+        {% elif i.shortsg %}
+            <td>{{ i.shortsg.p_name }}</td>
+            <td>{{ i.shortsg.price }}</td>
+           
+        {% elif i.trouser %}
+            <td>{{ i.trouser.p_name }}</td>
+            <td>{{ i.trouser.price }}</td>
+            
+        {% elif i.skirt %}
+            <td>{{ i.skirt.p_name }}</td>
+            <td>{{ i.skirt.price }}</td>
+            
+        {% elif i.joggerg %}
+            <td>{{ i.joggerg.p_name }}</td>
+            <td>{{ i.joggerg.price }}</td>
+           
+        {% elif i.chinosg %}
+            <td>{{ i.chinosg.p_name }}</td>
+            <td>{{ i.chinosg.price }}</td>
+            
+        {% elif i.flarepants %}
+            <td>{{ i.flarepants.p_name }}</td>
+            <td>{{ i.flarepants.price }}</td>
+           
+        {% elif i.phone %}
+            <td>{{ i.phone.p_name }}</td>
+            <td>{{ i.phone.price }}</td>
+            
+        {% elif i.swatch %}
+            <td>{{ i.swatch.p_name }}</td>
+            <td>{{ i.swatch.price }}</td>
+            
+        {% elif i.airpod %}
+            <td>{{ i.airpod.p_name }}</td>
+            <td>{{ i.airpod.price }}</td>
+            
+            
+        {% elif i.mwave %}
+            <td>{{ i.mwave.p_name }}</td>
+            <td>{{ i.mwave.price }}</td>
+            
+        {% elif i.camera %}
+            <td>{{ i.camera.p_name }}</td>
+            <td>{{ i.camera.price }}</td>
+            
+        {% elif i.tv %}
+            <td>{{ i.tv.p_name }}</td>
+            <td>{{ i.tv.price }}</td>
+           
+        {% elif i.light %}
+            <td>{{ i.light.p_name }}</td>
+            <td>{{ i.light.price }}</td>
+            
+        {% elif i.fan %}
+            <td>{{ i.fan.p_name }}</td>
+            <td>{{ i.fan.price }}</td>
+            
+        {% elif i.charger %}
+            <td>{{ i.charger.p_name }}</td>
+            <td>{{ i.charger.price }}</td>
+            
+        {% elif i.vc %}
+            <td>{{ i.vc.p_name }}</td>
+            <td>{{ i.vc.price }}</td>
+           
+        {% elif i.dumbell %}
+            <td>{{ i.dumbell.p_name }}</td>
+            <td>{{ i.dumbell.price }}</td>
+            
+        {% elif i.bar %}
+            <td>{{ i.bar.p_name }}</td>
+            <td>{{ i.bar.price }}</td>
+            
+        {% elif i.hgrip %}
+            <td>{{ i.hgrip.p_name }}</td>
+            <td>{{ i.hgrip.price }}</td>
+            
+        {% elif i.creatine %}
+            <td>{{ i.creatine.p_name }}</td>
+            <td>{{ i.creatine.price }}</td>
+            
+        {% elif i.protien %}
+            <td>{{ i.protien.p_name }}</td>
+            <td>{{ i.protien.price }}</td>
+           
+        {% elif i.gbag %}
+            <td>{{ i.gbag.p_name }}</td>
+            <td>{{ i.gbag.price }}</td>
+           
+        {% elif i.towel %}
+            <td>{{ i.towel.p_name }}</td>
+            <td>{{ i.towel.price }}</td>
+            
+        {% elif i.shoes %}
+            <td>{{ i.shoes.p_name }}</td>
+            <td>{{ i.shoes.price }}</td>
+            
+        {% elif i.matt %}
+            <td>{{ i.matt.p_name }}</td>
+            <td>{{ i.matt.price }}</td>
+            
+        {% elif i.wmachine %}
+            <td>{{ i.wmachine.p_name }}</td>
+            <td>{{ i.wmachine.price }}</td>
+           
+        {% elif i.pen %}
+            <td>{{ i.pen.p_name }}</td>
+            <td>{{ i.pen.price }}</td>
+           
+        {% elif i.pencil %}
+            <td>{{ i.pencil.p_name }}</td>
+            <td>{{ i.pencil.price }}</td>
+           
+        {% elif i.pouch %}
+            <td>{{ i.pouch.p_name }}</td>
+            <td>{{ i.pouch.price }}</td>
+            
+        {% elif i.lbox %}
+            <td>{{ i.lbox.p_name }}</td>
+            <td>{{ i.lbox.price }}</td>
+            
+        {% elif i.sanitizer %}
+            <td>{{ i.sanitizer.p_name }}</td>
+            <td>{{ i.sanitizer.price }}</td>
+            
+        {% elif i.sbag %}
+            <td>{{ i.sbag.p_name }}</td>
+            <td>{{ i.sbag.price }}</td>
+           
+        {% elif i.wallet %}
+            <td>{{ i.wallet.p_name }}</td>
+            <td>{{ i.wallet.price }}</td>
+            
+        {% elif i.umbrella %}
+            <td>{{ i.umbrella.p_name }}</td>
+            <td>{{ i.umbrella.price }}</td>
+           
+        {% elif i.note %}
+            <td>{{ i.note.p_name }}</td>
+            <td>{{ i.note.price }}</td>
+            
+        {% elif i.wbottle %}
+            <td>{{ i.wbottle.p_name }}</td>
+            <td>{{ i.wbottle.price }}</td>
+            
+        {% elif i.novel %}
+            <td>{{ i.novel.p_name }}</td>
+            <td>{{ i.novel.price }}</td>
+           
+        {% elif i.sstories %}
+            <td>{{ i.sstories.p_name }}</td>
+            <td>{{ i.sstories.price }}</td>
+            
+        {% elif i.thriller %}
+            <td>{{ i.thriller.p_name }}</td>
+            <td>{{ i.thriller.price }}</td>
+            
+        {% elif i.romance %}
+            <td>{{ i.romance.p_name }}</td>
+            <td>{{ i.romance.price }}</td>
+            
+        {% elif i.fantasy %}
+            <td>{{ i.fantasy.p_name }}</td>
+            <td>{{ i.fantasy.price }}</td>
+           
+        {% elif i.historical %}
+            <td>{{ i.historical.p_name }}</td>
+            <td>{{ i.historical.price }}</td>
+            
+        {% elif i.cook %}
+            <td>{{ i.cook.p_name }}</td>
+            <td>{{ i.cook.price }}</td>
+           
+        {% elif i.drama %}
+            <td>{{ i.drama.p_name }}</td>
+            <td>{{ i.drama.price }}</td>
+            
+        {% elif i.self %}
+            <td>{{ i.self.p_name }}</td>
+            <td>{{ i.self.price }}</td>
+            
+        {% elif i.travel %}
+            <td>{{ i.travel.p_name }}</td>
+            <td>{{ i.travel.price }}</td>
+            
+        {% elif i.eauf %}
+            <td>{{ i.eauf.p_name }}</td>
+            <td>{{ i.eauf.price }}</td>
+            
+        {% elif i.eaud %}
+            <td>{{ i.eaud.p_name }}</td>
+            <td>{{ i.eaud.price }}</td>
+            
+        {% elif i.oil %}
+            <td>{{ i.oil.p_name }}</td>
+            <td>{{ i.oil.price }}</td>
+           
+        {% elif i.solid %}
+            <td>{{ i.solid.p_name }}</td>
+            <td>{{ i.solid.price }}</td>
+           
+        {% elif i.splash %}
+            <td>{{ i.splash.p_name }}</td>
+            <td>{{ i.splash.price }}</td>
+            
+        {% elif i.neutral %}
+            <td>{{ i.neutral.p_name }}</td>
+            <td>{{ i.neutral.price }}</td>
+            
+        {% elif i.seasonal %}
+            <td>{{ i.seasonal.p_name }}</td>
+            <td>{{ i.seasonal.price }}</td>
+            
+        {% elif i.gourmand %}
+            <td>{{ i.gourmand.p_name }}</td>
+            <td>{{ i.gourmand.price }}</td>
+            
+        {% elif i.wood %}
+            <td>{{ i.wood.p_name }}</td>
+            <td>{{ i.wood.price }}</td>
+            
+        {% elif i.niche %}
+            <td>{{ i.niche.p_name }}</td>
+            <td>{{ i.niche.price }}</td>
+           
+        {% elif i.skincare %}
+            <td>{{ i.skincare.p_name }}</td>
+            <td>{{ i.skincare.price }}</td>
+            
+        {% elif i.makeup %}
+            <td>{{ i.makeup.p_name }}</td>
+            <td>{{ i.makeup.price }}</td>
+           
+        {% elif i.haircare %}
+            <td>{{ i.haircare.p_name }}</td>
+            <td>{{ i.haircare.price }}</td>
+
+        {% elif i.nailcare %}
+            <td>{{ i.nailcare.p_name }}</td>
+            <td>{{ i.nailcare.price }}</td>
+           
+        {% elif i.fragnance %}
+            <td>{{ i.fragnance.p_name }}</td>
+            <td>{{ i.fragnance.price }}</td>
+            
+        {% elif i.organic %}
+            <td>{{ i.organic.p_name }}</td>
+            <td>{{ i.organic.price }}</td>
+            
+        {% elif i.mature %}
+            <td>{{ i.mature.p_name }}</td>
+            <td>{{ i.mature.price }}</td>
+            
+        {% elif i.suncare %}
+            <td>{{ i.suncare.p_name }}</td>
+            <td>{{ i.suncare.price }}</td>
+            
+        {% elif i.lipcare %}
+            <td>{{ i.lipcare.p_name }}</td>
+            <td>{{ i.lipcare.price }}</td>
+            
+        {% elif i.hairdye %}
+            <td>{{ i.haircye.p_name }}</td>
+            <td>{{ i.hairdye.price }}</td>
+            
+        {% elif i.handgun %}
+            <td>{{ i.handgun.p_name }}</td>
+            <td>{{ i.handgun.price }}</td>
+
+        {% elif i.sniper %}
+            <td>{{ i.sniper.p_name }}</td>
+            <td>{{ i.sniper.price }}</td>
+            
+        {% elif i.shotgun %}
+            <td>{{ i.shotgun.p_name }}</td>
+            <td>{{ i.shotgun.price }}</td>
+           
+        {% elif i.dagger %}
+            <td>{{ i.dagger.p_name }}</td>
+            <td>{{ i.dagger.price }}</td>
+           
+        {% elif i.bow %}
+            <td>{{ i.bow.p_name }}</td>
+            <td>{{ i.bow.price }}</td>
+            
+        {% elif i.nunchaku %}
+            <td>{{ i.nunchaku.p_name }}</td>
+            <td>{{ i.nunchaku.price }}</td>
+            
+        {% elif i.katana %}
+            <td>{{ i.katana.p_name }}</td>
+            <td>{{ i.katana.price }}</td>
+
+        {% elif i.warhammer %}
+            <td>{{ i.warhammer.p_name }}</td>
+            <td>{{ i.warhammer.price }}</td>
+            
+        {% elif i.stungun %}
+            <td>{{ i.stungun.p_name }}</td>
+            <td>{{ i.stungun.price }}</td>
+            
+        {% elif i.whips %}
+            <td>{{ i.whips.p_name }}</td>
+            <td>{{ i.whips.price }}</td>
+            
+        {% elif i.jewelery %}
+            <td>{{ i.jewelery.p_name }}</td>
+            <td>{{ i.jewelery.price }}</td>
+            
+        {% elif i.watch %}
+            <td>{{ i.watch.p_name }}</td>
+            <td>{{ i.watch.price }}</td>
+            
+        {% elif i.hats %}
+            <td>{{ i.hats.p_name }}</td>
+            <td>{{ i.hats.price }}</td>
+            
+        {% elif i.eyewear %}
+            <td>{{ i.eyewear.p_name }}</td>
+            <td>{{ i.eyewear.price }}</td>
+            
+        {% elif i.scarves %}
+            <td>{{ i.scarves.p_name }}</td>
+            <td>{{ i.scarves.price }}</td>
+            
+        {% elif i.belts %}
+            <td>{{ i.belts.p_name }}</td>
+            <td>{{ i.belts.price }}</td>
+            
+        {% elif i.mittens %}
+            <td>{{ i.mittens.p_name }}</td>
+            <td>{{ i.mittens.price }}</td>
+            
+        {% elif i.whips %}
+            <td>{{ i.whips.p_name }}</td>
+            <td>{{ i.whips.price }}</td>
+            
+        {% elif i.haira %}
+            <td>{{ i.haira.p_name }}</td>
+            <td>{{ i.haira.price }}</td>
+            
+        {% elif i.socks %}
+            <td>{{ i.socks.p_name }}</td>
+            <td>{{ i.socks.price }}</td>
+        {% elif i.product %}
+            <td>{{ i.product.p_name }}</td>
+            <td>{{ i.product.price }}</td>
+        {% elif i.tcart %}
+            <td>{{ i.tcart.p_name }}</td>
+            <td>{{ i.tcart.price }}</td>
+            
+        {% endif %}
+        <td>
+            <div class="d-flex justify-content-center align-items-center ">
+                <form class="col-2 text-center m-0" action="update/{{ i.id }}/minus" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-light">-</button>
+                </form>
+                <div class="col-2 text-center ">{{ i.quantity }}</div>
+                <form class="col-2 text-center m-0" action="update/{{ i.id }}/plus" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-light">+</button>
+                </form>
+            </div>
+        </td>
+    
+        <td>{{ i.user }}</td>
+        <td class="text-center" id="individual_price_{{ i.id }}">{{ i.individual_price }}</td>
+
+        {% for i in clist %}
+  
+        
+        {% if i.airpod %}
+            <td>
+                <div class="d-flex justify-content-end mt-3">
+                    <a href="{% url 'payment_page' %}?product_id={{ i.airpod.id }}" class="btn btn-primary">Buy</a>
+                </div>
+            </td>
+        {% endif %}
+        
+    {% endfor %}
+    
+        
+        
+
+    
+    </tr>
+
+
+
+    <!-- {% for i in clist %}
+  
+        
+        {% if i.airpod %}
+            <td>
+                <div class="d-flex justify-content-end mt-3">
+                    <a href="{% url 'payment_page' %}?product_id={{ i.airpod.id }}" class="btn btn-primary">Buy</a>
+                </div>
+            </td>
+        {% endif %}
+    {% endfor %} -->
+        <!-- <td>{{ i.user }}</td>
+        <td class="text-center" id="individual_price_{{ i.id }}">{{ i.individual_price }}</td>
+    </tr> -->
+    {% endfor %}
+
+
+
+
+</table>
+
+<div class="d-flex justify-content-end">
+    <div class="title col-2"><h2>Total Price:</h2></div>
+    <div class="price col-1"><h2>₹{{ total_price }}</h2></div>
+</div>
+<form action="{% url 'buy_all' %}" method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-success">Buy All</button>
+</form>
+
+<!-- {% for i in clist %}
+    <tr style="vertical-align: middle;">
+        
+
+        <td>{{ i.user }}</td>
+        <td class="text-center" id="individual_price_{{ i.id }}">{{ i.individual_price }}</td>
+        
+        {% if i.airpod %}
+            <td>
+                <div class="d-flex justify-content-end mt-3">
+                    <a href="{% url 'payment_page' %}?product_id={{ i.airpod.id }}" class="btn btn-primary">Buy</a>
+                </div>
+            </td>
+        {% endif %}
+    </tr>
+{% endfor %} -->

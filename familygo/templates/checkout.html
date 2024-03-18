@@ -1,0 +1,66 @@
+<!-- checkout.html -->
+
+{%load static%}
+{%include 'navbar.html'%}
+
+<div class="container mt-5">
+    <h2>Checkout</h2>
+
+    <h1>Checkout</h1>
+    <p>Your order with ID: {{ order_id }} has been created.</p>
+    <p>Total Price: ${{ order_total }}</p>
+    
+    <h2>Order Items:</h2>
+    <ul>
+        {% for item in order_items %}
+            <li>{{ item.product_name }} - Quantity: {{ item.quantity }} - Price: ${{ item.price }}</li>
+        {% endfor %}
+    </ul>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h4>Your Order</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in order_items %}
+                    <tr>
+                        <td>{{ i.product_name }}</td>
+                        <td>{{ i.quantity }}</td>
+                        <td>{{ i.price }}</td>
+                        <td>{{ i.total_price }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Total</td>
+                        <td>{{ tp }}</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <form method="post" action="{% url 'checkout_confirm' order_id=order_id %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary" style="color: beige;">Place Order</button>
+            </form>
+
+
+            </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+

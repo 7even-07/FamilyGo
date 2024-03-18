@@ -1,0 +1,244 @@
+{%include 'navbar.html'%}
+{%load static%}
+<link rel="stylesheet" href="{%static 'css/other.css'%}">
+<br>
+
+<body style="background-color: papayawhip;">
+    <div style="text-align: center;">
+        <h3>Categories</h3>
+      </div>
+    <br>
+<div class="container">
+<div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+<div class="col">
+<div class="p-3 border bg-light"><a href="mens"
+style="text-decoration: none;display: block;margin: 0 
+auto;color: black;"><img
+style="height: 100px; width: 100px;display: 
+block;margin: 0 auto;border-radius: 50%;overflow: hidden;"
+src="{%static 'men image.jpg'%}" alt="img">
+<p style="text-align: center;">Mens</p>
+</a></div>
+</div>
+<div class="col">
+<div class="p-3 border bg-light"><a href="women"
+style="text-decoration: none;display: block;margin: 0 
+auto;color: black;">
+<img style="height: 100px;width: 100px;display: 
+block;margin: 0 auto;border-radius: 50%;overflow: hidden;"
+src="{%static 'female image.jpg'%}" alt="female 
+image">
+<p style="text-align: center;">Females</p>
+</a>
+</div>
+</div>
+<div class="col">
+<div class="p-3 border bg-light"><a href="electronics"
+style="text-decoration: none;display: block;margin: 0 
+auto;color: black;">
+<img style="height: 100px;width: 100px;display: 
+block;margin: 0 auto;border-radius: 50%; overflow: hidden;"
+src="{%static 'electronics.jpg'%}"
+alt="electronics image">
+<p style="text-align: center;">electronics</p>
+</a>
+</div>
+</div>
+<div class="col">
+<div class="p-3 border bg-light"><a href="gym"
+style="text-decoration: none;display: block;margin: 0 
+auto; color: black;">
+<img style="height: 100px;width: 100px;display: 
+block;margin: 0 auto;border-radius: 50%;overflow: hidden;"
+src="{%static 'gym.jpg'%}" alt="gym image">
+<p style="text-align: center;">Gym stuff</p>
+</a>
+</div>
+</div>
+<div class="col">
+<div class="p-3 border bg-light"> <a href="school"
+style="text-decoration: none;display: block;margin: 0 
+auto;color: black;">
+<img style="height: 100px;width: 100px;display: 
+block;margin: 0 auto;border-radius: 50%;overflow: hidden;"
+src="{%static 'school.jpg'%}" alt="school image">
+<p style="text-align: center;">School</p>
+</a>
+</div>
+</div>
+<div class="col">
+<div class="p-3 border bg-light"><a href="books"
+style="text-decoration: none;display: block;margin: 0 
+auto; color: black;">
+<img style="height: 100px;width: 100px;display: 
+block;margin: 0 auto;border-radius: 50%;overflow: hidden;"
+src="{%static 'books.jpg'%}" alt="books images">
+<p style="text-align: center;">Books</p>
+</a>
+</div>
+</div>
+<div class="col">
+<div class="p-3 border bg-light"><a href="perfumes"
+style="text-decoration: none;display: block;margin: 0 
+auto;color: black;">
+<img style="height: 100px;width: 100px;display: 
+block;margin: 0 auto;border-radius: 50%;overflow: hidden;"
+src="{%static 'perfumes.jpg'%}" alt="perfumes 
+image">
+<p style="text-align: center;">perfumes</p>
+</a>
+</div>
+</div>
+<div class="col">
+<div class="p-3 border bg-light"><a href="cosmetics"
+style="text-decoration: none;display: block;margin: 0 
+auto; color: black;">
+<img style="height: 100px;width: 100px;display: 
+block;margin: 0 auto;border-radius: 50%;overflow: hidden;"
+src="{%static 'cosmetics.jpg'%}" alt="cosmetics 
+image">
+<p style="text-align: center;">cosmetics</p>
+</a>
+</div>
+</div>
+<div class="col">
+<div class="p-3 border bg-light"><a href="weapons"
+style="text-decoration: none;display: block;margin: 0 
+auto;color: black;">
+<img style="height: 100px;width: 100px;display: 
+block;margin: 0 auto;border-radius: 50%;overflow: hidden;"
+src="{%static 'weapons.jpg'%}" alt="weapons 
+image">
+<p style="text-align: center;">weapons</p>
+</a>
+</div>
+</div>
+<div class="col">
+<div class="p-3 border bg-light">
+<a href="accessories" style="text-decoration: none;color: 
+black;"><img style="height: 100px;width: 100px;display: block;margin: 0 
+auto;border-radius: 50%;overflow: hidden;" src="{%static 'accessories.jpg'%}"
+alt="">
+<p style="text-align: center;">Accessories</p>
+</a>
+</div>
+</div>
+</div>
+</div>
+<br>
+
+    <span style="background-color: pink;">
+        <table border="1" cellspacing="10" cellpadding="20">
+            <tr>
+                <th>
+                    <p>hello Guys, welcome to our FamilyGo site. here we add some new products which are specially made
+                        for you. have a look, make your day more beautiful with buy our best products.</p>
+                </th>
+            </tr>
+        </table>
+    </span>
+    <br>
+    <div style="text-align: center;">
+        <h3>Trending Things</h3>
+    </div>
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            {% for trending_product in cl %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}" data-bs-interval="10000">
+                    <a href="tcart/{{ trending_product.p_name }}">
+                        <img style="height: 600px; width: 1000px; display: block; margin: 0 auto;"
+                             src="{{ trending_product.image.url }}" class="d-block w-100" alt="{{ trending_product.p_name }}">
+                    </a>
+                    <!-- Description and Price for Trending Product -->
+                    <div class="carousel-caption">
+                        <p class="card-text">{{ trending_product.description }}</p>
+                        <h3>{{ trending_product.price }}</h3>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+        <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button> -->
+    </div>
+
+
+
+    <br>
+    <div style="text-align: center;">
+        <h3>Most Buyed</h3>
+      </div>
+    <br>
+    <div style="background-color: darkgray;">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {%for i in pl%}
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="{{ i.image.url }}" alt="{{ i.p_name }}" class="bd-placeholder-img card-img-top"
+                        style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <p class="card-text">{{ i.description }}</p>
+                        <h3>{{ i.price }}</h3>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">
+                                    <a href="mostbuyedcart/{{ i.p_name }}">AddToCart</a>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                            </div>
+                            <small class="text-muted"></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            {%endfor%}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        </div>
+    </div>
+    <br>
+    <div>
+
+
+
+    <br>
+    <br>
+    <br>
+      <div style="text-align: center;">
+        <td>
+            <button class="btn btn-outline-success" type="submit">
+                <a href="login" style="text-decoration: none;">Login</a>
+            </button>
+        </td>
+        <td>
+            <button class="btn btn-outline-primary" type="submit" style="margin-left: 10px;">
+                <a href="register" style="text-decoration: none;">Register</a>
+            </button>
+        </td>
+      </div>
+      <br>
+
+    </div>
+
+
+
+    
+
+</body>

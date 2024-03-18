@@ -1,0 +1,68 @@
+{%include 'navbar.html'%}
+{%load static%}
+<div style="text-align: center;background-color: pink;">
+    <h3>Chinos</h3>
+  </div>  
+  <br>
+  <br>
+
+
+
+
+
+
+
+  <body style="background-color: papayawhip;">
+    <div class="container" style="background-color: darkgray;">
+  
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          {%for i in pl%}
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="{{ i.image.url }}" alt="{{ i.p_name }}" class="bd-placeholder-img card-img-top"
+                          style="width: 100%; height: 200px; object-fit: cover;">
+  
+              <div class="card-body">
+                <p class="card-text">{{i.description}}</p>
+                <h3>{{i.price}}</h3>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">
+                      <a href="chinosgcart/{{i.p_name}}">AddtoCart</a>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted"></small>
+                </div>
+              </div>
+            </div>
+          </div>
+          {%endfor%}
+  
+            </div>
+          </div>
+        </div>
+      </div>
+  
+  
+  <br>
+  <br>
+  <br>
+    <div style="text-align: center;">
+      <td>
+          <button class="btn btn-outline-success" type="submit">
+              <a href="login" style="text-decoration: none;">Login</a>
+          </button>
+      </td>
+      <td>
+          <button class="btn btn-outline-primary" type="submit" style="margin-left: 10px;">
+              <a href="register" style="text-decoration: none;">Register</a>
+          </button>
+      </td>
+    </div>
+    <br>
+  
+  </div>
+  
+  </body>
+  

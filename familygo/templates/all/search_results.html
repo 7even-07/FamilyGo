@@ -1,0 +1,50 @@
+{%include 'navbar.html'%}
+{%load static%}
+
+{% if query %}
+        {% for product in all_products_list %}
+        <div class="col" style="width: 20%;">
+            <div class="card shadow-sm">
+                <div class="align-items-center prod" style="height: 10rem;">
+                    <img src="{{ product.image.url }}" alt="{{ product.p_name }}" class="w-100">
+                </div>
+                <h5>{{ product.p_name }}</h5>
+                <div class="card-body border-top">
+                    <!-- <p class="card-text">{{ product.p_description }}</p> -->
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn">
+                                <a href="addtocart/{{ product.p_name }}">Add</a>
+                            </button>
+                        </div>
+                        <h4>₹{{ product.price }}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        {% else %}
+        {%for i in cl%}
+        <div class="col" style="width: 20%;">
+            <div class="card shadow-sm">
+                <div class="align-items-center prod" style="height: 10rem;">
+                    <img src="{{ i.image.url }}" alt="{{ i.p_name }}" class="w-100">
+                </div>
+                <h5>{{i.p_name}}</h5>
+                <div class="card-body border-top">
+                    <!-- <p class="card-text">{{i.p_description}}</p> -->
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn">
+                                <a href="addtocart/{{i.p_name}}">Add</a>
+                            </button>
+                        </div>
+                        <h4>₹{{i.price}}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+
+        {% endif %}
